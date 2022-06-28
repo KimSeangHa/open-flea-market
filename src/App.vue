@@ -1,12 +1,23 @@
 <template>
   <v-app>
+    <!-- color="#7986CB" -->
     <v-app-bar
       app
-      color="#7986CB"
-      dark
+      elevation="3"
+      color="#fff"
+      border="1px solid #ddd"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-spacer/>
+      
+      <v-spacer></v-spacer>
+      
+      <v-btn
+        depressed
+        class="ma-2"
+      >
+          <div>로그인</div>
+      </v-btn>
+      
       <v-btn icon>
           <v-icon>mdi-message-alert</v-icon>
       </v-btn>
@@ -57,7 +68,16 @@
                <v-icon>mdi-store-cog</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>나의 플리마켓 관리</v-list-item-title>
+              <v-list-item-title>플리마켓 관리</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+               <v-icon>mdi-store-cog</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>플리마켓 입점</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -69,12 +89,34 @@
     </v-navigation-drawer>
 
     <v-main app>
+      <v-row
+        class="justify-center border1 boxShadow0"
+        color="#fff"
+        elevation="0"
+      >
+        <v-toolbar
+          dense
+          floating
+          class="justify-center pa-2 border1 boxShadow0"
+          width="30rem"
+          height="63px"
+          elevation="0"
+        >
+          <v-text-field
+            hide-details
+            prepend-icon="mdi-magnify"
+            single-line
+            style="width: 20rem;"
+            placeholder="지역명을 입력해주세요."
+          ></v-text-field>
+        </v-toolbar>
+      </v-row>
+      
       <router-view/>
     </v-main>
 
     <v-footer
-      color="#7986CB"
-      dark
+      class="v-lazy theme--light"
     >
       <v-spacer>made...</v-spacer>
     </v-footer>
@@ -97,3 +139,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  @import '../src/sass/variables.scss';
+  @import "../src/assets/css/common.css";
+</style>

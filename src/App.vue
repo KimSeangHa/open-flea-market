@@ -1,27 +1,39 @@
 <template>
   <v-app>
-    <!-- color="#7986CB" -->
-    <v-app-bar
-      app
-      elevation="3"
-      color="#fff"
-      style="border: 1px solid #ddd;"
-    >
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
-      
-      <v-spacer></v-spacer>
-      
-      <v-btn
-        depressed
-        class="ma-2"
+    <div>
+      <!-- color="#7986CB" -->
+      <v-app-bar
+        app
+        elevation="3"
+        color="#fff"
+        style="border: 1px solid #ddd;"
       >
-          <div>로그인</div>
-      </v-btn>
-      
-      <v-btn icon>
-          <v-icon>mdi-bell-outline</v-icon>
-      </v-btn>
-    </v-app-bar>
+        <v-app-bar-nav-icon @click="drawer = !drawer"/>
+        
+        <v-spacer></v-spacer>
+        
+        <!--
+        <v-btn
+          depressed
+          class="ma-2"
+        >
+            <div>회원가입</div>
+        </v-btn>
+        -->
+
+        <v-btn
+          depressed
+          class="ma-2"
+        >
+            <div>로그인</div>
+        </v-btn>
+        
+        <v-btn icon>
+            <v-icon>mdi-bell-outline</v-icon>
+        </v-btn>
+      </v-app-bar>
+    </div>
+    
 
     <v-navigation-drawer
       v-model="drawer"
@@ -74,7 +86,7 @@
 
           <v-list-item>
             <v-list-item-icon>
-               <v-icon>mdi-store-cog</v-icon>
+               <v-icon>mdi-store-plus</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>플리마켓 입점</v-list-item-title>

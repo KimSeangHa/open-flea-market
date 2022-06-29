@@ -5,7 +5,7 @@
       app
       elevation="3"
       color="#fff"
-      border="1px solid #ddd"
+      style="border: 1px solid #ddd;"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       
@@ -19,7 +19,7 @@
       </v-btn>
       
       <v-btn icon>
-          <v-icon>mdi-message-alert</v-icon>
+          <v-icon>mdi-bell-outline</v-icon>
       </v-btn>
     </v-app-bar>
 

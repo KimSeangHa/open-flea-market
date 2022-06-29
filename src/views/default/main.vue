@@ -1,5 +1,8 @@
 <template>
-  <main-card />
+  <div 
+    class="justify-center text-center">
+    <main-card />
+  </div>
 </template>
 
 <script>

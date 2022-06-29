@@ -5,3 +5,7 @@
 .boxShadow0 {
     box-shadow: none;
 }
+
+.margin-0-auto {
+    margin: 0 auto !important;
+}

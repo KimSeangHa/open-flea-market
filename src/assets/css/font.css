@@ -1,0 +1,14 @@
+@import url(../font/notokr.css);
+
+body {
+	font-family: "Noto Sans KR";
+}
+
+span,
+a,
+button,
+input,
+select,
+option {
+	transform: skew(0.1deg);
+}

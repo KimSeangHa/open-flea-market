@@ -105,6 +105,7 @@
         class="justify-center border1 boxShadow0"
         color="#fff"
         elevation="0"
+        v-if="mainSearchBar"
       >
         <v-toolbar
           dense
@@ -136,6 +137,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'App',
 
@@ -148,6 +151,11 @@ export default {
     group () {
       this.drawer = false
     },
+  },
+  computed: {
+    ...mapState({
+      mainSearchBar: state => state.common.mainSearchBar,
+    }),
   }
 };
 </script>

@@ -10,16 +10,7 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
-  },
+  //------- 메인화면
   {
     path: '/main',
     name: 'Main',
@@ -29,7 +20,30 @@ const routes = [
     component: function () {
       return import('../views/default/main.vue')
     }
-  }
+  },
+  //------- 로그인
+  {
+    path: '/login',
+    name: 'Login',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import('../views/account/login.vue')
+    }
+  },
+  //------- 회원가입
+  {
+    path: '/registerForm',
+    name: 'registerForm',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import('../views/account/registerForm.vue')
+    }
+  },
+
 ]
 
 const router = new VueRouter({

@@ -1,6 +1,6 @@
 <template>
     <v-container
-        class="justify-center text-center main-card-container"
+        class="justify-center text-center main-container"
     >
             <div
                 class="d-inline-block main-card-form main-card-line-1 justify-center text-center margin-0-auto"
@@ -69,7 +69,7 @@
                         <v-card-text>
                             <v-row>
                                 <div class="main-card-text-form">
-                                    <span class="font-weight-bold sub-">총 </span>
+                                    <span class="font-weight-bold">총 </span>
                                     <span>11건</span>
                                 </div>
                             </v-row>
@@ -82,10 +82,7 @@
 </template>
 
 <style lang="scss">
-.main-card-container {
-    margin-top: 10px;
-    max-width: 50rem;
-}
+@import "../../assets/css/common.css";
 
 .main-card-form {
     height: auto;

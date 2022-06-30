@@ -25,7 +25,9 @@
           depressed
           class="ma-2"
         >
-            <div>로그인</div>
+            <div>
+              <router-link to='/login' style="text-decoration: none; color: inherit;">로그인</router-link>
+            </div>
         </v-btn>
         
         <v-btn icon>

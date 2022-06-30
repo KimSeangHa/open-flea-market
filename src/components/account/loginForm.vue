@@ -10,13 +10,13 @@
         </div>
 
         <div class="justify-center text-center margin-0-auto login-sub-text">
-            <v-col class="font-weight-light">
+            <v-col class="font-weight-light" style="padding: 3px;">
                 <span>＊ 카카오 계정으로 간편하고 안전하게 로그인(회원가입)할 수 있습니다.</span>
             </v-col>
-            <v-col class="font-weight-light">
-                <span>＊ 제공항목에 "전체 동의하기"를 체크해주세요.</span>
+            <v-col class="font-weight-light" style="padding: 3px;">
+                <span>＊ 현재는 카카오 계정으로 회원가입이 가능합니다. (추후에 업데이트 예정)</span>
             </v-col>
-            <v-col style="padding: 0px;">
+            <v-col style="padding: 3px;">
                 <span class="font-weight-light">＊ 카카오 계정이 기억나지 않으시나요? </span>
                 <span class="text-decoration-underline">
                     <a style="color: #5f5f5f" target="_blank" href="https://accounts.kakao.com/weblogin/find_password?continue=https://accounts.kakao.com/weblogin/account/info">확인방법</a>    
@@ -27,11 +27,13 @@
 </template>
 
 <script>
+import config from '@/assets/config/config.json';
+
 export default {
     name: 'Login',
     data() {
         return {
-            client_id: ""
+            client_id: config.kakaoClientID
         }
     },
     mounted() {
@@ -105,8 +107,7 @@ export default {
                     console.log(error);   
 
                     if (error.error == "invalid_grant") {
-                        // alert("세션이 만료되었습니다.\n 다시 로그인해주시기 바랍니다.");
-                        // location.reload();
+                        alert("세션이 만료되었습니다.\n 다시 로그인해주시기 바랍니다.");
                     }                 
                 }
             })
@@ -138,4 +139,7 @@ export default {
     margin-top: 30px;
 }
 
+.login-sub-text {
+    padding-top: 15px;
+}
 </style>

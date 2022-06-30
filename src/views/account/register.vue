@@ -1,16 +1,20 @@
 <template>
   <div class="justify-center text-center">
-      회원가입 폼
+      <register-form />
   </div>
 </template>
 
 <script>
+import registerForm from '@/components/account/registerForm'
+
 export default {
-  name: 'loginCheck',
+  name: 'Register',
   mounted() {
     console.log("@@@@@@")
   },
-  components: {}
+  components: {
+    registerForm
+  }
 }
 </script>
 

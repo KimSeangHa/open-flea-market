@@ -14,9 +14,6 @@ const routes = [
   {
     path: '/main',
     name: 'Main',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: function () {
       return import('../views/default/main.vue')
     }
@@ -25,9 +22,6 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: function () {
       return import('../views/account/login.vue')
     }
@@ -36,9 +30,6 @@ const routes = [
   {
     path: '/registerForm',
     name: 'registerForm',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: function () {
       return import('../views/account/registerForm.vue')
     }

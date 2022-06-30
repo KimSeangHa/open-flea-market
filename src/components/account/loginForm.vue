@@ -31,13 +31,16 @@ export default {
     name: 'Login',
     data() {
         return {
-            client_id: "b2fc9713587dabd2ae20f93feb7aa725"
+            client_id: ""
         }
+    },
+    mounted() {
+        // kakao init
+        window.Kakao.init(this.client_id)
     },
     methods: {
         kakaoLogin() {
-            window.Kakao.init(this.client_id) // javascript Key
-
+             // javascript Key
             if (window.Kakao.Auth.getAccessToken()) {
                 window.Kakao.API.request({
                     url: '/v1/user/unlink',

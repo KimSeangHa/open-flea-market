@@ -48,9 +48,9 @@
       >
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+          active-class="deep-purple--text text--accent-4 font-weight-bold"
         >
-          <v-list-item>
+          <v-list-item id="list-menu-1" @click="menuSelected(1)">
             <v-list-item-icon>
                <v-icon>mdi-chat-processing</v-icon>
             </v-list-item-icon>
@@ -59,7 +59,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item @click="menuSelected(2)">
             <v-list-item-icon>
                <v-icon>mdi-magnify</v-icon>
             </v-list-item-icon>
@@ -68,7 +68,7 @@
             </v-list-item-content>
           </v-list-item>
 
-           <v-list-item>
+           <v-list-item @click="menuSelected(3)">
             <v-list-item-icon>
                <v-icon>mdi-account-group</v-icon>
             </v-list-item-icon>
@@ -77,7 +77,7 @@
             </v-list-item-content>
           </v-list-item>
 
-           <v-list-item>
+           <v-list-item @click="menuSelected(4)">
             <v-list-item-icon>
                <v-icon>mdi-store-cog</v-icon>
             </v-list-item-icon>
@@ -86,7 +86,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item @click="menuSelected(5)">
             <v-list-item-icon>
                <v-icon>mdi-store-plus</v-icon>
             </v-list-item-icon>
@@ -95,8 +95,13 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>문의사항</v-list-item-title>
+          <v-list-item @click="menuSelected(6)">
+            <v-list-item-icon>
+               <v-icon>mdi-store-plus</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>문의 사항</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -149,14 +154,26 @@ export default {
     group: null
   }),
 
+  methods: {
+    menuSelected(menuNumber) {
+      this.$store.commit("common/setMenuNumber", menuNumber);
+    }
+  },
+
+  mounted() {
+    document.getElementById("list-menu-1")
+
+  },
   watch: {
     group () {
       this.drawer = false
     },
   },
+
   computed: {
     ...mapState({
       mainSearchBar: state => state.common.mainSearchBar,
+      menuNumber: state => state.menuNumber
     }),
   }
 };

@@ -29,13 +29,24 @@ const routes = [
   //------- 회원가입
   {
     path: '/register',
-    name: 'register',
+    name: 'Register',
     component: function () {
       return import('../views/account/register.vue')
     }
   },
+  // ------- 마켓 조회
+  {
+    path: "/searchMarket",
+    name: "SearchMarket",
+    component: () => import("../views/market/searchMarket.vue")
+  },
 
-  
+  // ------- 404 NotFound Page Error Handle
+  {
+    path: "*",
+    name: "NotFound",
+    component: () => import("../views/error/notFound.vue")
+  }
 ]
 
 const router = new VueRouter({

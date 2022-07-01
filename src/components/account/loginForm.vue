@@ -39,9 +39,12 @@ export default {
     mounted() {
         // kakao init
         window.Kakao.init(this.client_id)
+
     },
     methods: {
         kakaoLogin() {
+            const self = this;
+
              // javascript Key
             if (window.Kakao.Auth.getAccessToken()) {
                 window.Kakao.API.request({
@@ -90,6 +93,8 @@ export default {
                                             // 1-1. DB에 email이 존재할 경우 jwt token 값 저장
                                                 // 저장 후 main 페이지로 이동
                                             // 1-2. DB에 email이 없을 경우 registerForm으로 이동
+
+                                        self.$router.push("register")
                                     },
                                     fail: function (error) {
                                         console.log("login Error");

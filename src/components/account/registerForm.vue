@@ -35,8 +35,8 @@
             ></v-checkbox>
 
             <v-btn
-                color="success"
-                class="mr-4"
+                color="#6200ea"
+                class="mr-4 register-btn"
                 @click="registerProcess()"
             >
                 회원가입
@@ -102,4 +102,9 @@ export default {
     max-width: 30rem;
 }
 
+.register-btn {
+    color: #fff !important;
+    opacity: 0.6;
+    background-color: #ece0fc;
+}
 </style>

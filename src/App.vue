@@ -24,6 +24,7 @@
         <v-btn
           depressed
           class="ma-2"
+          v-if="loginBtnShow"
         >
             <div>
               <router-link to='/login' style="text-decoration: none; color: inherit;">로그인</router-link>
@@ -173,7 +174,8 @@ export default {
   computed: {
     ...mapState({
       mainSearchBar: state => state.common.mainSearchBar,
-      menuNumber: state => state.menuNumber
+      menuNumber: state => state.menuNumber,
+      loginBtnShow: state => state.login.loginBtnShow
     }),
   }
 };

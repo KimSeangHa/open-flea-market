@@ -63,10 +63,18 @@ router.beforeEach(function (to, from, next) {
   // from : 현재 url
   // next : to에서 지정한 url로 이동하기 위해 꼭 호출해야 하는 함수
   
+  // 메인 화면 검색바 표시
   if (to.path == "/main") {
     store.commit("common/setMainSearchBar", true)
   } else {
     store.commit("common/setMainSearchBar", false)
+  }
+
+  // 로그인 버튼 표시
+  if (to.path == "/register" || to.path == "/login") {
+    store.commit("login/setLoginBtnShow", false)
+  } else {
+    store.commit("login/setLoginBtnShow", true)
   }
 
   next();
